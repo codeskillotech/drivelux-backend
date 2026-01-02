@@ -17,7 +17,13 @@ app.use(cors());
 app.use(express.json()); // to parse JSON body
 
 // Routes
+const authRoutes = require("./routes/authRoutes");
+const adminAuthRoutes = require("./routes/adminAuthRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
+app.use("/api/bookings", bookingRoutes);
 
+app.use("/api/admin", adminAuthRoutes);
+app.use("/api/auth", authRoutes);
 // Health check
 app.get("/", (req, res) => {
   res.send("API is running...");
