@@ -20,8 +20,9 @@ app.use(express.json()); // to parse JSON body
 const authRoutes = require("./routes/authRoutes");
 const adminAuthRoutes = require("./routes/adminAuthRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
+const contactRoutes = require("./routes/contactRoutes"); 
 app.use("/api/bookings", bookingRoutes);
-
+app.use("/api/contact", contactRoutes);
 app.use("/api/admin", adminAuthRoutes);
 app.use("/api/auth", authRoutes);
 // Health check
